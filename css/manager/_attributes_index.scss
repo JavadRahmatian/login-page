@@ -1,0 +1,162 @@
+.attributes-index-panel {
+    .inner-container {
+        grid-template-areas: 
+            'title title'
+            'added add'
+        ;
+        grid-template-columns: 1fr 350px;
+        grid-template-rows: 100px 1fr;
+        .added-attributes-con {
+            grid-area: added;
+            .inner-attributes-con {
+                @include flex(column,flex-start,flex-start,10px,nowrap);
+                width: 100%;
+                height: auto;
+                .attribute-row {
+                    @include flex(column,flex-start,flex-start,0,nowrap);
+                    width: 100%;
+                    height: 50px;
+                    overflow-y: hidden;
+                    transition: 0.2s;
+                    border: solid 1px #d3d3d3 {
+                        radius: 10px;
+                    };
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    .attribute-detail {
+                        display: grid;
+                        grid-template-rows: 49px;
+                        grid-template-columns: 1fr repeat(2, 40px);
+                        width: 100%;
+                        height: 100%;
+                        padding: 0 15px 0 10px;
+                        box-sizing: border-box;
+                        margin: 0;
+                        flex-basis: 0;
+                        .title {
+                            @include flex(row,flex-start,center);
+                            @include font(shabnam,normal,17px,var(--black));
+                            box-sizing: border-box;
+                        }
+                        .edit {
+                            @include flex();
+                            svg {
+                                width: 18px;
+                                fill: gray;
+                                transition: 0.2s;
+                                cursor: pointer;
+                                &:hover {
+                                    fill: #4068eb;
+                                }
+                            }
+                        }
+                        .remove {
+                            @include flex();
+                            svg {
+                                width: 18px;
+                                fill: gray;
+                                transition: 0.2s;
+                                cursor: pointer;
+                                &:hover {
+                                    fill: #db2929;
+                                }
+                            }
+                        }
+                    }
+                    .keys-container {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        justify-content: flex-start;
+                        gap: 20px;
+                        width: 100%;
+                        height: auto;
+                        padding: 20px;
+                        box-sizing: border-box;
+                        .input-con {
+                            @include flex(row,flex-start,center,15px,nowrap);
+                            height: auto;
+                            min-width: 200px;
+                            width: auto;
+                            height: 40px;
+                            .key-number {
+                                @include flex();
+                                @include font(Arial,bold,18px,var(--black));
+                                height: 25px;
+                                width: 50px;
+                                border-left: solid 1px #a3a3a3;
+                            }
+                            .key-name {
+                                @include flex(row,flex-start,center);
+                                @include font(shabnam,normal,18px,var(--black));
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .add-attributes-con {
+            grid-area: add;
+            align-items: flex-end;
+            h3 {
+                @include flex($justify:flex-start);
+                @include font(shabnamLight,normal,17px,var(--black));
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+            }
+            .keys-inputs-con {
+                @include flex(column,flex-start,center,10px,nowrap);
+                width: 100%;
+                height: auto;
+                .input-con {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 0;
+                    span {
+                        @include flex();
+                        @include font(shabnamBold,normal,20px,var(--black));
+                        height: 100%;
+                        width: auto;
+                        aspect-ratio: 1/1;
+                        &.remove {
+                            box-sizing: border-box;
+                            svg {
+                                width: 18px;
+                                fill: #a3a3a3;
+                                cursor: pointer;
+                                transition: 0.2s;
+                                &:hover {
+                                    fill: #be4242;
+                                }
+                            }
+                        }
+                        &.plus {
+                            box-sizing: border-box;
+                            padding: 10px;
+                            svg {
+                                fill: #a3a3a3;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .input-text {
+                        flex-shrink: 1;
+                        cursor: text;
+                        &.disabled {
+                            background-color: #fcfcfc;
+                        }
+                    }
+                }
+            }
+            .submit-button {
+                background-color: #4068eb;
+            }
+        }
+    }
+}

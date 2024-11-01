@@ -1,0 +1,295 @@
+.input-text {
+    @include font(shabnam, normal, 17px, var(--black));
+    width: 100%;
+    height: 40px;
+
+    border: solid 1px var(--lightgray) {
+        radius: 8px;
+    }
+
+    ;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    outline: none !important;
+    background-color: var(--lightblue);
+    flex-shrink: 0;
+    transition: 0.2s;
+
+    &:focus,
+    &:valid {
+        border-color: var(--blue);
+        background-color: var(--white);
+
+        +.input-label {
+            top: -10px;
+            font-size: 15px;
+            color: var(--blue);
+            height: 16px;
+            background-color: var(--white);
+        }
+    }
+}
+
+.textarea {
+    @extend .input-text;
+    height: 100%;
+    resize: none;
+    font-family: shabnamLight;
+    padding: 5px 10px;
+}
+
+.input-label {
+    @include flex();
+    @include font(shabnamLight, normal, 17px, var(--gray2));
+    width: auto;
+    height: 20px;
+    padding: 0 5px;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    cursor: text;
+    transition: 0.2s;
+    background-color: var(--lightblue);
+}
+
+.input-con {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.textarea-con {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    &.height {
+        height: auto;
+    }
+}
+
+.select-con {
+    @include flex(row,flex-start,center,10px,wrap);
+    position: absolute;
+    top: 56px;
+    width: auto;
+    max-width: calc(100% - 40px);
+    min-height: 50px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--white);
+    box-shadow: 0px 9px 30px -16px #acacac;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: 1 !important;
+    border: solid 1px var(--lightgray) {
+        radius: var(--radius);
+    };
+}
+
+.select-button {
+    @include font(shabnamLight, normal, 17px, var(--gray2));
+    @include flex(row, flex-start, center, 5px, nowrap);
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    outline: none !important;
+    background-color: var(--lightyellow);
+    flex-shrink: 0;
+    transition: 0.2s;
+    text-align: right;
+    cursor: pointer;
+    overflow-x: auto;
+    scrollbar-width: thin;
+
+    border: solid 1px var(--lightgray) {
+        radius: 8px;
+    }
+
+    ;
+
+    +label {
+        background-color: var(--lightyellow);
+        cursor: pointer;
+
+        +.select-button-icon {
+            @include background('/assets/manager/icons/caretDown.svg');
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: calc(50% - 6px);
+            left: 15px;
+            filter: brightness(130%);
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                scale: 1.2;
+            }
+        }
+    }
+}
+
+.submit-button {
+    @include font(shabnamLight, normal, 17px, var(--white));
+    @include flex(row, center, center, 10px, nowrap);
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    outline: none !important;
+    flex-shrink: 0;
+    transition: 0.2s;
+    cursor: pointer;
+    justify-content: center;
+    background-color: #47b18d;
+    border: {
+        radius: 10px;
+        width: 0;
+    };
+    svg {
+        fill: white;
+        width: 18px;
+        height: 18px;
+        &.small {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+.discard-button {
+    @include font(shabnamLight, normal, 17px, #bd1e1e);
+    @include flex(row, center, center, 5px, nowrap);
+    width: auto;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    outline: none !important;
+    flex-shrink: 0;
+    transition: 0.2s;
+    cursor: pointer;
+    justify-content: center;
+    background-color: var(--white);
+    transition: 0.2s;
+
+    border: solid 1px #bd1e1e {
+        radius: 10px;
+    }
+
+    ;
+
+    &:hover {
+        background-color: #bd1e1e;
+        color: var(--white);
+    }
+}
+
+.inserted-item {
+    @include flex($gap: 5px);
+    @include font(shabnamLight, normal, 15px, var(--black));
+    width: auto;
+    height: 23px;
+    background-color: lightgray;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 15px 8px;
+
+    i {
+        @include background('/assets/manager/icons/close.svg', $size: 70%, $pos: 40% 60%);
+        width: 15px;
+        height: 15px;
+        background-color: #b3b3b3;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+}
+
+.focused-button {
+    border-color: var(--blue);
+    background-color: var(--white);
+}
+
+.focused-label {
+    top: -10px;
+    font-size: 15px;
+    color: var(--blue);
+    height: 16px;
+    background-color: var(--white) !important;
+}
+
+.focused-section {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(-10px);
+}
+
+.back-cover {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #91919165;
+    backdrop-filter: blur(1px);
+    z-index: 199;
+    display: none;
+}
+
+.success-message {
+    @include flex(column,space-between);
+    @include font(shabnamMedium,normal,20px,var(--black));
+    position: absolute;
+    width: 300px;
+    height: 130px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--white);
+    top: calc(50% - 70px);
+    right: calc(50% - 150px);
+    box-shadow: var(--shadow);
+    z-index: 201;
+    display: none;
+    border: solid 1px var(--lightgray) {
+        radius: 15px;
+    };
+    span {
+        @include flex();
+        width: 100%;
+        height: auto;
+    }
+    div {
+        @include flex($gap: 20px);
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        .ok {
+            @include font(shabnam,normal,18px,var(--white));
+            width: 100%;
+            height: 40px;
+            background-color: #23be0f;
+            outline: none;
+            cursor: pointer;
+            border: none {
+                radius: 10px;
+            };
+        }
+        .show {
+            @include font(shabnam,normal,18px,var(--white));
+            @include flex();
+            width: 100%;
+            height: 40px;
+            background-color: #256dca;
+            outline: none;
+            cursor: pointer;
+            text-decoration: none !important;
+            border: none {
+                radius: 10px;
+            };
+        }
+    }
+}
