@@ -14,6 +14,8 @@ body {
 }
 
 .main-container {
+  box-shadow: var(--javadShadow);
+
   border: solid 0.1rem var(--lightgray) {
     radius: var(--radius);
   }
@@ -66,6 +68,9 @@ body {
       border: solid 1px #d3d3d3 {
         radius: 10px;
       }
+      box-shadow: 0px 0px 6px 0.4px rgba(176, 176, 176, 0.683);
+      // box-shadow: 0px 0px 8px 0.2px #b0b0b0;
+
       // border: 1px solid #838398;
       // border-radius: 0.5rem;
       color: #333;
@@ -79,9 +84,42 @@ body {
       color: #9696a3;
     }
 
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      // color: #d3d3d3;
+
+      input[type="checkbox"] {
+        // transform: scale(1.4);
+        // accent-color: #b69df5;
+      }
+
+      & > * {
+        flex-grow: 0;
+      }
+    }
+
     .input-group {
       display: flex;
       gap: 1.2rem;
+    }
+
+    button {
+      box-shadow: 0px 0px 6px 0.4px rgba(176, 176, 176, 0.683);
+      background-color: var(--blue);
+      color: #fff;
+      padding: 1.2rem;
+      // font-size: 1rem;
+
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: var(--blueLight);
     }
   }
 }
@@ -110,4 +148,5 @@ img {
   );
   height: 100%;
   border-radius: var(--radius);
+  box-shadow: 0px 0px 6px 0.4px rgba(176, 176, 176, 0.683);
 }

@@ -1,72 +1,74 @@
 :root {
-	--white: #fff;
-	--black: #111;
-	--blue: #0c41a3;
-	--gray: #5e5e5e;
-	--gray2: #4d4d4d;
-	--lightblue: #ebf1f2;
-	--lightyellow: #ffefd4;
-	--lightgray: #e2e2e2;
-	--radius: 15px;
-	--shadow: 0px 10px 30px -30px #919191;
+  --white: #fff;
+  --black: #111;
+  --blue: #0c41a3;
+  --blueLight: #2454ac;
+  --gray: #5e5e5e;
+  --gray2: #4d4d4d;
+  --lightblue: #ebf1f2;
+  --lightyellow: #ffefd4;
+  --lightgray: #e2e2e2;
+  --radius: 15px;
+  --shadow: 0px 10px 30px -30px #919191;
+  --javadShadow: 0px 0px 6px 0.3px #a2a3a470;
 }
 
 @mixin flex(
-	$dir: row,
-	$justify: center,
-	$align: center,
-	$gap: 0px,
-	$wrap: nowrap
+  $dir: row,
+  $justify: center,
+  $align: center,
+  $gap: 0px,
+  $wrap: nowrap
 ) {
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex: {
-		direction: $dir;
-		wrap: $wrap;
-	}
-	gap: $gap;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex: {
+    direction: $dir;
+    wrap: $wrap;
+  }
+  gap: $gap;
 }
 
 @mixin font(
-	$family: shabnam,
-	$weight: normal,
-	$size: 18px,
-	$color: var(--black)
+  $family: shabnam,
+  $weight: normal,
+  $size: 18px,
+  $color: var(--black)
 ) {
-	font: {
-		family: $family;
-		weight: $weight;
-		size: $size;
-	}
-	color: $color;
+  font: {
+    family: $family;
+    weight: $weight;
+    size: $size;
+  }
+  color: $color;
 }
 
-@mixin background($url: '', $size: cover, $pos: center) {
-	background: {
-		image: url($url);
-		size: $size;
-		repeat: no-repeat;
-		position: $pos;
-	}
-}
-
-@font-face {
-	font-family: shabnam;
-	src: url(../../fonts/shabnam/farsi-digits/Shabnam-FD.ttf);
+@mixin background($url: "", $size: cover, $pos: center) {
+  background: {
+    image: url($url);
+    size: $size;
+    repeat: no-repeat;
+    position: $pos;
+  }
 }
 
 @font-face {
-	font-family: shabnamBold;
-	src: url(/assets/manager/fonts/shabnam/farsi-digits/Shabnam-Bold-FD.ttf);
+  font-family: shabnam;
+  src: url(../../fonts/shabnam/farsi-digits/Shabnam-FD.ttf);
 }
 
 @font-face {
-	font-family: shabnamMedium;
-	src: url(/assets/manager/fonts/shabnam/farsi-digits/Shabnam-Medium-FD.ttf);
+  font-family: shabnamBold;
+  src: url(/assets/manager/fonts/shabnam/farsi-digits/Shabnam-Bold-FD.ttf);
 }
 
 @font-face {
-	font-family: shabnamLight;
-	src: url(/assets/manager/fonts/shabnam/farsi-digits/Shabnam-Light-FD.ttf);
+  font-family: shabnamMedium;
+  src: url(/assets/manager/fonts/shabnam/farsi-digits/Shabnam-Medium-FD.ttf);
+}
+
+@font-face {
+  font-family: shabnamLight;
+  src: url(/assets/manager/fonts/shabnam/farsi-digits/Shabnam-Light-FD.ttf);
 }

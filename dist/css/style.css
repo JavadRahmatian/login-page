@@ -3,6 +3,7 @@
   --white: #fff;
   --black: #111;
   --blue: #0c41a3;
+  --blueLight: #2454ac;
   --gray: #5e5e5e;
   --gray2: #4d4d4d;
   --lightblue: #ebf1f2;
@@ -10,6 +11,7 @@
   --lightgray: #e2e2e2;
   --radius: 15px;
   --shadow: 0px 10px 30px -30px #919191;
+  --javadShadow: 0px 0px 6px 0.3px #a2a3a470;
 }
 
 @font-face {
@@ -2562,6 +2564,7 @@ body {
 }
 
 .main-container {
+  box-shadow: var(--javadShadow);
   border: solid 0.1rem var(--lightgray);
   border-radius: var(--radius);
   background-color: var(--lightblue);
@@ -2614,6 +2617,7 @@ body {
 .form-container form input {
   border: solid 1px #d3d3d3;
   border-radius: 10px;
+  box-shadow: 0px 0px 6px 0.4px rgba(176, 176, 176, 0.683);
   color: #333;
   padding: 12px;
   font-size: 1.4rem;
@@ -2626,9 +2630,30 @@ body {
 .form-container form input::placeholder {
   color: #9696a3;
 }
+.form-container form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.form-container form .checkbox > * {
+  flex-grow: 0;
+}
 .form-container form .input-group {
   display: flex;
   gap: 1.2rem;
+}
+.form-container form button {
+  box-shadow: 0px 0px 6px 0.4px rgba(176, 176, 176, 0.683);
+  background-color: var(--blue);
+  color: #fff;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.form-container form button:hover {
+  background-color: var(--blueLight);
 }
 
 .side-by-side {
@@ -2654,4 +2679,5 @@ img {
   background-position: center;
   height: 100%;
   border-radius: var(--radius);
+  box-shadow: 0px 0px 6px 0.4px rgba(176, 176, 176, 0.683);
 }/*# sourceMappingURL=style.css.map */
