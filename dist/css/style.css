@@ -2637,6 +2637,7 @@ body {
 }
 .form-container form .checkbox > * {
   flex-grow: 0;
+  cursor: pointer;
 }
 .form-container form .input-group {
   display: flex;
@@ -2669,10 +2670,10 @@ img {
 }
 
 .image-container {
+  position: relative;
   padding: 1.6rem;
 }
-
-.image-background {
+.image-container .image-background {
   background-image: url("../../image/original-f6aa71c9cba938fa7fd85beb3caf1b0d (2).jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -2680,4 +2681,23 @@ img {
   height: 100%;
   border-radius: var(--radius);
   box-shadow: 0px 0px 6px 0.4px rgba(176, 176, 176, 0.683);
+}
+.image-container .image-background button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  top: 2.8rem;
+  left: 2.8rem;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 1.5rem;
+  background-color: rgba(231, 245, 255, 0.6980392157);
+  box-shadow: 0px 0px 4px 0.2px rgba(145, 145, 145, 0.63);
+  cursor: pointer;
+}
+.image-container .image-background button img {
+  width: 1.6rem;
+  height: 1.6rem;
+  filter: grayscale(100%);
 }/*# sourceMappingURL=style.css.map */
